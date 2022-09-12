@@ -1,0 +1,14 @@
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\bin\Debug\net6.0\MSSQL.deps.json
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\bin\Debug\net6.0\MSSQL.runtimeconfig.json
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\bin\Debug\net6.0\MSSQL.dll
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\bin\Debug\net6.0\MSSQL.pdb
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\MSSQL.csproj.AssemblyReference.cache
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\MSSQL.GeneratedMSBuildEditorConfig.editorconfig
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\MSSQL.AssemblyInfoInputs.cache
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\MSSQL.AssemblyInfo.cs
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\MSSQL.csproj.CoreCompileInputs.cache
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\MSSQL.dll
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\refint\MSSQL.dll
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\MSSQL.pdb
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\MSSQL.genruntimeconfig.cache
+C:\NguyenThanhDuy\Week2\Demo_T2\MSSQL\obj\Debug\net6.0\ref\MSSQL.dll

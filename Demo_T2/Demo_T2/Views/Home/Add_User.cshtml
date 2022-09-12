@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewData["Title"] = "Add_User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1> Create new User</h1>
+
+<div class="sign-up">
+    <span>UserName</span>
+    <input type="text" id="txtUserName" placeholder="Username" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Username';}">
+</div>
+<div class="sign-up">
+    <span>Email</span>
+    <input type="email" id="txtEmail" placeholder="Email" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Email';}">
+</div>
+<div class="sign-up">
+    <span>Password</span>
+    <input type="password" id="txtPassword" placeholder="Password" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Password';}">
+</div>
+<div class="sign-up">
+    <span>FirstName</span>
+    <input type="text" id="txtFirstName" placeholder="FirstName" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'FirstName';}">
+</div>
+
+<div class="sign-up">
+    <span>LastName</span>
+    <input type="text" id="txtLastName" placeholder="LastName" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'LastName';}">
+</div>
+
+<div class="sign-up">
+    <span>PhoneNumber</span>
+    <input type="text" id="txtPhoneNumber" placeholder="PhoneNumber" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'PhoneNumber';}">
+</div>
+
+<div class="sign-up">
+    <span>Address</span>
+    <input type="text" id="txtAddress" placeholder="Address" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Address';}">
+</div>
+
+<div class="sign-up">
+    <input type="button" value="Create New" onclick="SaveObject()>
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>UserName</th>
+        <th>Gmail</th>
+        <th>Password</th>
+    </tr>
+@foreach(var item in Model){
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Username</td>
+        <td>@item.Email</td>
+        <td>@item.Password</td>
+    </tr>
+}
+   
+   
+</table>
+
+
+
+<script>
+    function SaveObject() {
+        var msob = document.getElementById('message');
+        msob.style.display = "none";
+        var username = document.getElementById('txtUserName').value;
+        var email = document.getElementById('txtEmail').value;
+        var pwd = document.getElementById('txtPassword').value;
+        var fn = document.getElementById('txtFirstName').value;
+        var ln = document.getElementById('txtLastName').value;
+        var pn = document.getElementById('txtPhoneNumber').value;
+        var addr = document.getElementById('txtAddress').value;
+
+
+        if (username.length == 0 || email.length == 0 || pwd.length == 0
+            || fn.length == 0 || ln.length == 0 || pn.length == 0 || addr.length == 0) {
+            alert("Chưa nhập đủ thông tin");
+        }
+        else {
+            ShowLoad();
+            var form = new FormData();
+            form.append('username', username);
+            form.append('email', email);
+            form.append('pwd', pwd);
+            form.append('fn', fn);
+            form.append('ln', fn);
+            form.append('pn', pn);
+            form.append('addr', addr);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/Home/New_User", true);
+            xhr.timeout = 30000;
+            xhr.ontimeout = function () {
+                HideLoad();
+                alert('Hệ thống tạm thời không khả dụng! Thử lại sau ít phút.');
+            }
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    HideLoad();
+                    var ms = JSON.parse(xhr.responseText);
+                    if (ms.Data.status == "OK") {
+                        document.getElementById('txtUserName').value = '';
+                        document.getElementById('txtEmail').value = '';
+                        document.getElementById('txtPassword').value = '';
+                        document.getElementById('txtFirstName').value = '';
+                        document.getElementById('txtLastName').value = '';
+                        document.getElementById('txtPhoneNumber').value = '';
+                        document.getElementById('txtAddress').value = '';
+                        msob.innerHTML = "Đã thêm mới thành công!";
+                        msob.style.display = "block";
+                    } else {
+                        alert(ms.Data.message);
+                    }
+                }
+            }
+            xhr.send(form);
+        }
+    }
+</script>
