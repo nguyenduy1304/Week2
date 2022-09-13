@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Demo_T2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220912091428_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220913080616_Update2")]
+    partial class Update2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,11 +25,9 @@ namespace Demo_T2.Migrations
 
             modelBuilder.Entity("Demo_T2.Models.User", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    b.Property<string>("Id")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -38,8 +36,8 @@ namespace Demo_T2.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -53,8 +51,11 @@ namespace Demo_T2.Migrations
 
             modelBuilder.Entity("Demo_T2.Models.UserDetail", b =>
                 {
-                    b.Property<int>("IdUser")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -62,6 +63,11 @@ namespace Demo_T2.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("IdUser")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -76,9 +82,12 @@ namespace Demo_T2.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
-                    b.HasKey("IdUser");
+                    b.HasKey("Id");
 
-                    b.ToTable("User_Detail");
+                    b.HasIndex("IdUser")
+                        .IsUnique();
+
+                    b.ToTable("UserDetail");
                 });
 
             modelBuilder.Entity("Demo_T2.Models.UserDetail", b =>

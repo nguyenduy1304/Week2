@@ -16,8 +16,10 @@ html {
 body {
   margin-bottom: 60px;
 }
-.sign-up{
-    padding: 5px
+
+.sign-up {
+    padding: 5px;
+    
 }
 input[type="text"], input[type="password"], input[type="email"] {
     width: 25%;
@@ -28,4 +30,7 @@ input[type="text"], input[type="password"], input[type="email"] {
 }
 input[type="button"]{
     background-color: #ffd800
+}
+table, th, td {
+    border: 1px solid #000;
 }

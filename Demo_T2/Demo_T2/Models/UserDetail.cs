@@ -6,6 +6,10 @@ namespace Demo_T2.Models
 {
     public class UserDetail
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
         [StringLength(50)]
         public String FirstName { get; set; }
 
@@ -19,8 +23,8 @@ namespace Demo_T2.Models
         public String Address { get; set; }
 
         [ForeignKey("User")]
-        [Key]
-        public int IdUser { get; set; }
+        [StringLength(50)]
+        public String IdUser { get; set; }
         public User User { get; set; }
 
 

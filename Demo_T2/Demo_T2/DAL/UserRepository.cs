@@ -16,12 +16,12 @@ namespace Demo_T2.DAL
 
         public IEnumerable<User> GetUsers()
         {
-            return context.User.ToList();
+            return context.User.Include(c => c.UserDetail).ToList();
         }
 
-        public User GetUserByID(int id)
+        public User GetUserByID(String id)
         {
-            return context.User.Find(id);
+            return context.User.Include(c => c.UserDetail).SingleOrDefault(c=>c.Id.Equals(id));
         }
 
         public void InsertUser(User user)
@@ -29,7 +29,7 @@ namespace Demo_T2.DAL
             context.User.Add(user);
         }
 
-        public void DeleteUser(int userid)
+        public void DeleteUser(String userid)
         {
             User user = context.User.Find(userid);
             context.User.Remove(user);
@@ -37,7 +37,7 @@ namespace Demo_T2.DAL
 
         public void UpdateUser(User user)
         {
-            context.Entry(user).State = EntityState.Modified;
+            context.User.Update(user);
         }
 
         public void Save()

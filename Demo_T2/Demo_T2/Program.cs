@@ -1,4 +1,6 @@
+using Demo_T2.DAL;
 using Demo_T2.Models;
+using Demo_T2.Repository;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 
@@ -10,6 +12,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserDetailRepository, UserDetailRepository>();
+
 
 var app = builder.Build();
 
@@ -30,6 +36,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Add_User}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

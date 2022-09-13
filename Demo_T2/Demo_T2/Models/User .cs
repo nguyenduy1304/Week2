@@ -7,8 +7,8 @@ namespace Demo_T2.Models
     public class User
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [StringLength(50)]
+        public String Id { get; set; }
         [Required]
         [StringLength(30)]
         public string Username { get; set; }
@@ -16,7 +16,7 @@ namespace Demo_T2.Models
         [StringLength(200)]
         public string Email { get; set; }
         [Required]
-        [StringLength(30)]
+        [StringLength(50)]
         public string Password { get; set; }
 
         public UserDetail UserDetail { get; set; }

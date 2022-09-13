@@ -4,11 +4,11 @@ namespace Demo_T2.Repository
 {
     public interface IUserDetailRepository : IDisposable
     {
-        IEnumerable<User> GetUser();
-        User GetUserByID(int id);
-        void InsertUser(User user);
-        void DeleteUser(int userid);
-        void UpdateUser(User user);
+        IEnumerable<UserDetail> GetUserDetails();
+        UserDetail GetUserDetailByID(String id);
+        void InsertUserDetail(UserDetail userDetail);
+        void DeleteUserDetail(String userid);
+        void UpdateUserDetail(UserDetail userDetail);
         void Save();
 
     }

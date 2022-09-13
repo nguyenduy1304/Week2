@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h1> Create new User</h1>
-
 <div class="sign-up">
     <span>UserName</span>
     <input type="text" id="txtUserName" placeholder="Username" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Username';}">
@@ -38,27 +37,41 @@
 </div>
 
 <div class="sign-up">
-    <input type="button" value="Create New" onclick="SaveObject()>
+    <input type="button" class="button1" value="Create New" onclick="SaveObject()" />
 </div>
-
 <table>
     <tr>
-        <th>ID</th>
+        <th>Id</th>
         <th>UserName</th>
-        <th>Gmail</th>
+        <th>Email</th>
         <th>Password</th>
     </tr>
-@foreach(var item in Model){
-    <tr>
-        <td>@item.Id</td>
-        <td>@item.Username</td>
-        <td>@item.Email</td>
-        <td>@item.Password</td>
-    </tr>
-}
-   
-   
+    @foreach (User item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Username</td>
+            <td>@item.Email</td>
+            <td>@item.Password</td>
+
+        </tr>
+    }
 </table>
+
+   
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
