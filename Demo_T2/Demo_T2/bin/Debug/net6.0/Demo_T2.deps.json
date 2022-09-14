@@ -12,7 +12,8 @@
           "Microsoft.EntityFrameworkCore.Design": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.8",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.8"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.8",
+          "PageList": "1.2.0"
         },
         "runtime": {
           "Demo_T2.dll": {}
@@ -1379,6 +1380,14 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {
             "assemblyVersion": "6.2.1.2",
             "fileVersion": "6.2.1.2"
+          }
+        }
+      },
+      "PageList/1.2.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/PageList.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
@@ -2749,6 +2758,13 @@
       "sha512": "sha512-+o507LXjsN1YVAgmpqKCQZ70cLsXDoVmR8H0Wgy0muiFnOhkXN2+a6PGFBAIuA7qJch/umTYu1hp7Dlh1Qcrgg==",
       "path": "nuget.versioning/6.2.1",
       "hashPath": "nuget.versioning.6.2.1.nupkg.sha512"
+    },
+    "PageList/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cE0TmBfCTtVu3mjI1Ghi2g/F3pOCqOO0i8tp3+gPqbNqdUkayzosmWo2BNPdoAJarF80RAWWsZbrt1BGIVOpjA==",
+      "path": "pagelist/1.2.0",
+      "hashPath": "pagelist.1.2.0.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

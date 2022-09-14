@@ -15,6 +15,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\NguyenThanhDuy\Week2\Demo_T2\Demo_T2
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/NguyenThanhDuy/Week2/Demo_T2/Demo_T2/Views/GenericRepository/AddUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJpY1JlcG9zaXRvcnlcQWRkVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NguyenThanhDuy/Week2/Demo_T2/Demo_T2/Views/GenericRepository/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJpY1JlcG9zaXRvcnlcRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/NguyenThanhDuy/Week2/Demo_T2/Demo_T2/Views/GenericRepository/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJpY1JlcG9zaXRvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/NguyenThanhDuy/Week2/Demo_T2/Demo_T2/Views/Home/AddUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

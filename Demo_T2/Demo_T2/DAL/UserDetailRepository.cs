@@ -25,6 +25,9 @@ namespace Demo_T2.DAL
 
         public void InsertUserDetail(UserDetail userDetail)
         {
+            //context.Database.ExecuteSqlRaw("INSERT [dbo].[UserDetail] ([FirstName], [LastName], [PhoneNumber], [Address], [IdUser]) VALUES (N'" +
+            //userDetail.FirstName + "',N'" + userDetail.LastName + "',N'" + userDetail.PhoneNumber + "',N'" + userDetail.Address + "',N'" + userDetail.IdUser + "')");
+
             context.UserDetail.Add(userDetail);
         }
 
