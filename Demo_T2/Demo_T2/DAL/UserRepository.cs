@@ -16,17 +16,16 @@ namespace Demo_T2.DAL
 
         public IEnumerable<User> GetUsers()
         {
-
             //return context.User.FromSqlRaw("SELECT * FROM [dbo].[User]").Include(c => c.UserDetail).ToList();
 
-            return context.User.Include(c => c.UserDetail).ToList();
+            return context.User.Include(c => c.UserDetail).AsNoTracking().ToList();
         }
 
         public User GetUserByID(String id)
         {
             //return context.User.FromSqlRaw("SELECT * FROM [dbo].[User] WHERE Id='" + id + "'").Include(c => c.UserDetail).SingleOrDefault();
 
-            return context.User.Include(c => c.UserDetail).SingleOrDefault(c=>c.Id.Equals(id));
+            return context.User.Include(c => c.UserDetail).AsNoTracking().SingleOrDefault(c=>c.Id.Equals(id));
         }
 
         public void InsertUser(User user)
